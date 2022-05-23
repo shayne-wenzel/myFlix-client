@@ -1,22 +1,35 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import { RegisterView } from '../register-view/register-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
+const handleSubmit = (e) => {
+  e.preventDefault();
+  console.log(username, password, email, birthday);
+  props.onRegister(false);
+};
+
 export class MainView extends React.Component {
+
+  state = {
+    visable: true
+  }
 
   constructor(){
     super();
     this.state = {
       movies: [],
       selectedMovie: null,
-      isRegistered: false,
-      user: null
+      isRegistered: true,
+      user: null,
+      visable: false
     }
   }
+  
 
   componentDidMount(){
     axios.get('https://movime-api.herokuapp.com/movies')
@@ -49,11 +62,34 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const { movies, selectedMovie, user, isRegistered } = this.state;
+    const { movies, selectedMovie, user, isRegistered, visable } = this.state;
+    const buttonText = this.state.visable ? "Submit" : "Resgister Here"
 
-    if (isRegistered) return <RegisterView onRegister={(bool) => this.onRegister(bool)} />;
+    if (isRegistered) {
+      return (<div>
+        {this.state.visable ? <RegisterView onRegister={(bool) => this.onRegister(bool)} /> : false}
+        
+        <button
+        onClick={() => {
+          this.setState({ visable: !this.state.visable});
+        }}
+        >
+          {buttonText}
+        </button>
+        </div>
+        );
+    }
+
+    
 
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    // <button 
+    //       onClick={() => {
+    //         this.setState({isRegistered: true});
+    //     }}
+    //   >
+    //     Register Here
+    //     </button>
 
     if (movies.length === 0) return <div className="main-view" />;
   

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { RegisterView } from '../register-view/register-view';
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
@@ -10,12 +10,6 @@ export function LoginView(props) {
     console.log(username, password);
       props.onLoggedIn(username);
   };
-
-  const handleRegister = (e) => {
-    e.preventDefault()
-    console.log('here')
-    props.onRegistration(true)
-}
 
 return (
   <form>
@@ -28,7 +22,14 @@ return (
       <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
     </label>
     <button type="submit" onClick={handleSubmit}>Submit</button>
-    <button type="submit" onClick={handleRegister}>Register Here</button>
+    <button 
+          // onClick={() => {
+          //   this.setState({isRegistered: false});
+        // }}
+      >
+        Register Here
+        </button>
   </form>
 );
 }
+
