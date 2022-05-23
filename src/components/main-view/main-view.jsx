@@ -63,7 +63,7 @@ export class MainView extends React.Component {
 
   render() {
     const { movies, selectedMovie, user, isRegistered, visable } = this.state;
-    const buttonText = this.state.visable ? "Submit" : "Resgister Here"
+    const buttonText = this.state.visable ? "Back" : "Resgister Here"
 
     if (isRegistered) {
       return (<div>
