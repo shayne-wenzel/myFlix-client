@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RegisterView } from '../register-view/register-view';
+import PropTypes from 'prop-types';
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
@@ -33,3 +33,9 @@ return (
 );
 }
 
+LoginView.propTypes = {
+  user: PropTypes.exact({
+    username: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+  }).isRequired,
+};

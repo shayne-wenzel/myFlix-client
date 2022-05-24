@@ -80,16 +80,7 @@ export class MainView extends React.Component {
         );
     }
 
-    
-
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-    // <button 
-    //       onClick={() => {
-    //         this.setState({isRegistered: true});
-    //     }}
-    //   >
-    //     Register Here
-    //     </button>
 
     if (movies.length === 0) return <div className="main-view" />;
   
