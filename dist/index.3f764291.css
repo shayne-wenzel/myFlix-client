@@ -1,0 +1,23 @@
+
+
+.btn-primary {
+  color: #fff;
+  background-color: #0D4470;
+  border-color: #0d6efd;
+}
+
+.h5, h5 {
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 1.375rem;
+}
+
+.card {
+  background-color: #EFEFEF;
+  margin: 15px;
+  border-radius: 10px;
+  border: none;
+}
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.3f764291.css.map */
