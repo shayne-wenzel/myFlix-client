@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
@@ -12,24 +16,23 @@ export function LoginView(props) {
   };
 
 return (
-  <form>
-    <label>
-      Username:
-      <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-    </label>
-    <label>
-      Password:
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-    </label>
-    <button type="submit" onClick={handleSubmit}>Submit</button>
-    <button 
-          // onClick={() => {
-          //   this.setState({isRegistered: false});
-        // }}
-      >
-        Register Here
-        </button>
-  </form>
+<>
+
+<Row className="justify-content-md-center">
+      <Col md={3}>
+<Form>
+    <Form.Group controlId="formUsername">
+      <Form.Label>Username:</Form.Label>
+      <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+    </Form.Group>
+    <Form.Group controlId="formPassword">
+      <Form.Label>Password:</Form.Label>
+      <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+    </Form.Group>
+    </Form><br></br>
+    <Button type="submit" onClick={handleSubmit}>Submit</Button>
+     </Col> 
+     </Row> </>
 );
 }
 

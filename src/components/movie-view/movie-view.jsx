@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import "./movie-view.scss"
+
+import { Card, Col, Container, Row, Button } from "react-bootstrap";
 
 export class MovieView extends React.Component {
 
@@ -19,7 +22,7 @@ export class MovieView extends React.Component {
           <span className="label">Description: </span>
           <span className="value">{movie.Description}</span>
         </div>
-        <button onClick={() => { onBackClick(null); }}>Back</button>
+        <Button onClick={() => { onBackClick(null); }}>Back</Button>
 
       </div>
     );

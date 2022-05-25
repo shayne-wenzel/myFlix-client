@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 //user registration form taking necessary user details
 export function RegisterView(props) {
@@ -15,27 +19,49 @@ export function RegisterView(props) {
   };
 
   return (
-    <form>
-      <label>
-        Username:
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-      </label>
-      <label>
-        Password:
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </label>
-      <label>
-        Email:
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      </label>
-      <label>
-        Birthday:
-        <input type="date" value={birthday} onChange={(e) => setBirthday(e.target.value)} />
-      </label>
-      <button type="submit" onClick={handleSubmit}>
-        Submit
-      </button>
-    </form>
+    <Row className="justify-content-md-center">
+      <Col md={3}>
+     <Form>
+            <Form.Group>
+                <Form.Label>Username:</Form.Label>
+                <Form.Control 
+                type="text" 
+                value={username} 
+                onChange={e => setUsername(e.target.value)} />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Password:</Form.Label>
+                <Form.Control 
+                type="password" 
+                value={password} 
+                onChange={e => setPassword(e.target.value)} 
+                minLength="8" />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Email</Form.Label>
+              <Form.Control 
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Birthday</Form.Label>
+              <Form.Control 
+                type="text"
+              />
+            </Form.Group>
+            <br></br>
+            <Button variant="primary" type="submit" onClick={handleSubmit}>Register</Button>
+        </Form>
+        <br></br>
+    <div><Button type="submit" onClick={handleSubmit}>
+        Or Log In
+      </Button>
+      </div>
+      <br></br>
+      </Col> 
+     </Row>
   );
 }
 

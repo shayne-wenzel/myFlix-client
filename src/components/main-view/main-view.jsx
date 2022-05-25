@@ -1,6 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+
+import "./main-view.scss"
 
 import { RegisterView } from '../register-view/register-view';
 import { LoginView } from '../login-view/login-view';
@@ -63,19 +68,19 @@ export class MainView extends React.Component {
 
   render() {
     const { movies, selectedMovie, user, isRegistered, visable } = this.state;
-    const buttonText = this.state.visable ? "Back" : "Resgister Here"
+    const buttonText = this.state.visable ? "Back" : "Welcome"
 
     if (isRegistered) {
       return (<div>
         {this.state.visable ? <RegisterView onRegister={(bool) => this.onRegister(bool)} /> : false}
         
-        <button
+        <Button
         onClick={() => {
           this.setState({ visable: !this.state.visable});
         }}
         >
           {buttonText}
-        </button>
+        </Button>
         </div>
         );
     }
@@ -85,15 +90,22 @@ export class MainView extends React.Component {
     if (movies.length === 0) return <div className="main-view" />;
   
     return (
-      <div className="main-view">
+      <Row className="main-view justify-content-md-center">
         {selectedMovie
-          ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+          ? (
+            <Col md={8}>
+              <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+            </Col>
+          )
           : movies.map(movie => (
-            <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>
+            <Col md={4}>
+              <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+            </Col>
           ))
         }
-      </div>
+      </Row>
     );
   }
 }
 export default MainView;
+
