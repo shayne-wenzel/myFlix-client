@@ -1,39 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import "./movie-view.scss"
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-import { Card, Col, Container, Row, Button } from "react-bootstrap";
+export function LoginView(props) {
+  const [ username, setUsername ] = useState('');
+  const [ password, setPassword ] = useState('');
 
-export class MovieView extends React.Component {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(username, password);
+      props.onLoggedIn(username);
+  };
 
-  render() {
-    const { movie, onBackClick } = this.props;
+return (
+<>
 
-    return (
-      <div className="movie-view">
-        <div className="movie-poster">
-          <img src={movie.ImagePath} />
-        </div>
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
-        </div>
-        <div className="movie-description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.Description}</span>
-        </div>
-        <Button onClick={() => { onBackClick(null); }}>Back</Button>
-
-      </div>
-    );
-  }
+<Row className="justify-content-md-center">
+      <Col md={3}>
+<Form>
+    <Form.Group controlId="formUsername">
+      <Form.Label>Username:</Form.Label>
+      <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+    </Form.Group>
+    <Form.Group controlId="formPassword">
+      <Form.Label>Password:</Form.Label>
+      <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+    </Form.Group>
+    </Form><br></br>
+    <Button type="submit" onClick={handleSubmit}>Submit</Button>
+     </Col> 
+     </Row> </>
+);
 }
 
-MovieView.propTypes = {
-  movie: PropTypes.shape({
-    Title: PropTypes.string.isRequired,
-    Description: PropTypes.string.isRequired,
-    ImagePath: PropTypes.string.isRequired
+LoginView.propTypes = {
+  user: PropTypes.exact({
+    username: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
   }).isRequired,
-  onBackClick: PropTypes.func.isRequired
 };
