@@ -1,6 +1,4 @@
 import React from 'react';
-<<<<<<< Updated upstream
-=======
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -8,14 +6,9 @@ import ShowMoreText from "react-show-more-text";
 import "./movie-card.scss"
 
 import { Link } from "react-router-dom";
->>>>>>> Stashed changes
 
 export class MovieCard extends React.Component {
   render() {
-<<<<<<< Updated upstream
-    const { movie, onMovieClick } = this.props;
-    return <div className="movie-card" onClick={() => { onMovieClick(movie); }}>{movie.Title}</div>;
-=======
     const { movie } = this.props;
 
     return (
@@ -43,6 +36,5 @@ export class MovieCard extends React.Component {
         </Card.Body>
       </Card>    
     );
->>>>>>> Stashed changes
   }
 }

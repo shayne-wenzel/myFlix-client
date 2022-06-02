@@ -1,22 +1,4 @@
 import React from 'react';
-<<<<<<< Updated upstream
-import { MovieCard } from '../movie-card/movie-card';
-import { MovieView } from '../movie-view/movie-view';
-
-export class MainView extends React.Component {
-
-  constructor(){
-    super();
-    this.state = {
-      movies: [
-        { _id: 1, Title: 'Inception', Description: 'desc1...', ImagePath: '...'},
-        { _id: 2, Title: 'The Shawshank Redemption', Description: 'desc2...', ImagePath: '...'},
-        { _id: 3, Title: 'Gladiator', Description: 'desc3...', ImagePath: '...'}
-      ],
-      selectedMovie: null
-    }
-  }
-=======
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
@@ -73,7 +55,6 @@ export class MainView extends React.Component {
       console.log(error);
     });
   }
->>>>>>> Stashed changes
 
   onLoggedIn(authData) {
     console.log(authData);
@@ -86,24 +67,6 @@ export class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-<<<<<<< Updated upstream
-  render() {
-    const { movies, selectedMovie } = this.state;
-
-    if (selectedMovie) return <MovieView movie={selectedMovie} />;
-  
-    if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
-  
-    return (
-      <div className="main-view">
-        {selectedMovie
-          ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-          : movies.map(movie => (
-            <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
-          ))
-        }
-      </div>
-=======
   onLoggedOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
@@ -180,7 +143,6 @@ export class MainView extends React.Component {
   </Row>
 </Router>
      
->>>>>>> Stashed changes
     );
   }
 }

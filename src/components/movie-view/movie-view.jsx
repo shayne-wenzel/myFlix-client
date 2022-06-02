@@ -1,6 +1,4 @@
 import React from 'react';
-<<<<<<< Updated upstream
-=======
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
@@ -8,7 +6,6 @@ import Button from 'react-bootstrap/Button';
 import "./movie-view.scss"
 
 import { Card, Col, Container, Row, Button } from "react-bootstrap";
->>>>>>> Stashed changes
 
 export class MovieView extends React.Component {
 
@@ -28,9 +25,6 @@ export class MovieView extends React.Component {
           <span className="label">Description: </span>
           <span className="value">{movie.Description}</span>
         </div>
-<<<<<<< Updated upstream
-        <button onClick={() => { onBackClick(null); }}>Back</button>
-=======
          <Link to={`/directors/${movie.Director.Name}`}>
           <Button className="d-block mt-3" variant="info">Director</Button>
         </Link>
@@ -38,14 +32,10 @@ export class MovieView extends React.Component {
           <Button className="d-block mt-3" variant="info">Genre</Button>
         </Link>
         <Button onClick={() => { onBackClick(null); }}>Back</Button>
->>>>>>> Stashed changes
 
       </div>
     );
   }
-<<<<<<< Updated upstream
-}
-=======
 }
 
 MovieView.propTypes = {
@@ -59,4 +49,3 @@ MovieView.propTypes = {
 
 
 
->>>>>>> Stashed changes
