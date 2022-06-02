@@ -18,7 +18,10 @@
   "homepage": "https://github.com/shayne-wenzel/myFlix-client#readme",
   "dependencies": {
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-bootstrap": "^2.4.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^5.3.0",
+    "react-show-more-text": "^1.5.2"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.0-rc.0"
