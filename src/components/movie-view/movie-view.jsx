@@ -1,44 +1,51 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Form from 'react-bootstrap/Form';
+import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
-export function LoginView(props) {
-  const [ username, setUsername ] = useState('');
-  const [ password, setPassword ] = useState('');
+import "./movie-view.scss"
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(username, password);
-      props.onLoggedIn(username);
-  };
+import { Card, Col, Container, Row, Button } from "react-bootstrap";
 
-return (
-<>
+export class MovieView extends React.Component {
 
-<Row className="justify-content-md-center">
-      <Col md={3}>
-<Form>
-    <Form.Group controlId="formUsername">
-      <Form.Label>Username:</Form.Label>
-      <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
-    </Form.Group>
-    <Form.Group controlId="formPassword">
-      <Form.Label>Password:</Form.Label>
-      <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
-    </Form.Group>
-    </Form><br></br>
-    <Button type="submit" onClick={handleSubmit}>Submit</Button>
-     </Col> 
-     </Row> </>
-);
+  render() {
+    const { movie, onBackClick } = this.props;
+
+    return (
+      <div className="movie-view">
+        <div className="movie-poster">
+          <img src={movie.ImagePath} />
+        </div>
+        <div className="movie-title">
+          <span className="label">Title: </span>
+          <span className="value">{movie.Title}</span>
+        </div>
+        <div className="movie-description">
+          <span className="label">Description: </span>
+          <span className="value">{movie.Description}</span>
+        </div>
+         <Link to={`/directors/${movie.Director.Name}`}>
+          <Button className="d-block mt-3" variant="info">Director</Button>
+        </Link>
+        <Link to={`/genres/${movie.Genre.Name}`}>
+          <Button className="d-block mt-3" variant="info">Genre</Button>
+        </Link>
+        <Button onClick={() => { onBackClick(null); }}>Back</Button>
+
+      </div>
+    );
+  }
 }
 
-LoginView.propTypes = {
-  user: PropTypes.exact({
-    username: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
+MovieView.propTypes = {
+  movie: PropTypes.shape({
+    Title: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired
   }).isRequired,
+  onBackClick: PropTypes.func.isRequired
 };
+
+
+
