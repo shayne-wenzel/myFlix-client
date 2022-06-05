@@ -13,11 +13,11 @@ export class GenreView extends React.Component {
       <Container>
         <Row>
           <Col className="label">Genre: </Col>
-          <Col className="value">{genre.Name}</Col>
+          <Col className="value">{genre.Genre.Name}</Col>
         </Row>
         <Row className="mt-3">
           <Col className="label">Description: </Col>
-          <Col className="value">{genre.Description}</Col>
+          <Col className="value">{genre.Genre.Description}</Col>
         </Row>
         <Button className="d-block mt-3" onClick={() => { onBackClick(null); }} variant="warning">Back</Button>
       </Container>

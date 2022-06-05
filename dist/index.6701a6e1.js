@@ -45457,7 +45457,7 @@ class DirectorView extends _reactDefault.default.Component {
                                 lineNumber: 16
                             },
                             __self: this,
-                            children: director.Name
+                            children: director.Director.Name
                         })
                     ]
                 }),
@@ -45485,7 +45485,7 @@ class DirectorView extends _reactDefault.default.Component {
                                 lineNumber: 20
                             },
                             __self: this,
-                            children: director.Bio
+                            children: director.Director.Bio
                         })
                     ]
                 }),
@@ -45513,7 +45513,7 @@ class DirectorView extends _reactDefault.default.Component {
                                 lineNumber: 24
                             },
                             __self: this,
-                            children: director.Birth
+                            children: director.Director.Birth
                         })
                     ]
                 }),
@@ -45547,7 +45547,7 @@ DirectorView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","./director-view.scss":"hWS1b","@parcel/transformer-js/src/esmodule-helpers.js":"kVAeU","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"jlXKL"}],"hWS1b":[function() {},{}],"8WCoL":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"kVAeU","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"jlXKL","./director-view.scss":"hWS1b"}],"hWS1b":[function() {},{}],"8WCoL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -45598,7 +45598,7 @@ class GenreView extends _reactDefault.default.Component {
                                 lineNumber: 16
                             },
                             __self: this,
-                            children: genre.Name
+                            children: genre.Genre.Name
                         })
                     ]
                 }),
@@ -45626,7 +45626,7 @@ class GenreView extends _reactDefault.default.Component {
                                 lineNumber: 20
                             },
                             __self: this,
-                            children: genre.Description
+                            children: genre.Genre.Description
                         })
                     ]
                 }),

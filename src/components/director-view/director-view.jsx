@@ -13,15 +13,15 @@ export class DirectorView extends React.Component {
       <Container className="director-view">
         <Row>
           <Col className="label">Director: </Col>
-          <Col className="value">{director.Name}</Col>
+          <Col className="value">{director.Director.Name}</Col>
         </Row>
         <Row className="mt-3">
           <Col className="label">Bio: </Col>
-          <Col className="value">{director.Bio}</Col>
+          <Col className="value">{director.Director.Bio}</Col>
         </Row>
         <Row className="mt-3">
           <Col className="label">Birth: </Col>
-          <Col className="value">{director.Birth}</Col>
+          <Col className="value">{director.Director.Birth}</Col>
         </Row>
         <Button onClick={() => { onBackClick(null); }} variant="warning">Back</Button>
       </Container>
