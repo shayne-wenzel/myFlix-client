@@ -16,7 +16,7 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { setMovies } from '../../actions/actions';
-import MoviesList from '../movies-list/movies-list'
+import MoviesList from '../../movies-list/movies-list';
 
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
