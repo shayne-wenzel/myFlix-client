@@ -5,6 +5,7 @@ import { SET_FILTER, SET_MOVIES } from '../actions/actions';
 function visibilityFilter(state = '', action) {
   switch (action.type) {
     case SET_FILTER:
+      console.log('reducer reached');
       return action.value;
     default:
       return state;

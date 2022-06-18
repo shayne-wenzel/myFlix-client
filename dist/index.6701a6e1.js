@@ -47968,6 +47968,7 @@ var _actions = require("../actions/actions");
 function visibilityFilter(state = '', action) {
     switch(action.type){
         case _actions.SET_FILTER:
+            console.log('reducer reached');
             return action.value;
         default:
             return state;
@@ -48579,6 +48580,7 @@ parcelHelpers.export(exports, "setFilter", ()=>setFilter
 const SET_MOVIES = 'SET_MOVIES';
 const SET_FILTER = 'SET_FILTER';
 function setMovies(value) {
+    console.log('action triggred');
     return {
         type: SET_MOVIES,
         value
