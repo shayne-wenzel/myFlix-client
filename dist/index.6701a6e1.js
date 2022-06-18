@@ -48095,9 +48095,10 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRedux = require("react-redux");
 var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
 var _actions = require("../actions/actions");
 function VisibilityFilterInput(props) {
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_form.Form.Control, {
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
         onChange: (e)=>props.setFilter(e.target.value)
         ,
         value: props.visibilityFilter,
