@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import "./main-view.scss"
 
-import { Navbar } from "../navbar/navbar";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { RegisterView } from '../register-view/register-view';
 import { LoginView } from '../login-view/login-view';
@@ -18,6 +18,7 @@ import { ProfileView } from '../profile-view/profile-view';
 import { setMovies } from '../../actions/actions';
 import MoviesList from '../../movies-list/movies-list';
 
+import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
