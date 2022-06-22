@@ -5,9 +5,8 @@
   "source": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel ./src/index.html",
-    "build:parcel": "parcel build src/index.html --public-url /",
-    "start": "parcel"
+    "start": "parcel src/index",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
@@ -22,7 +21,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "axios": "^0.27.2",
-    "buffer": "^6.0.3",
+    "parcel": "^2.0.0-rc.0",
     "react": "^18.1.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",
@@ -33,7 +32,6 @@
     "redux-devtools-extension": "^2.13.9"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.0",
-    "parcel": "^2.6.0"
+    "@parcel/transformer-sass": "^2.0.0-rc.0"
   }
 }
