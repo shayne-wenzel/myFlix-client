@@ -9,7 +9,7 @@ import "./main-view.scss"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { RegisterView } from '../register-view/register-view';
 import { LoginView } from '../login-view/login-view';
-import { Navbar } from '../navbar/navbar';
+import { Menubar } from '../navbar/navbar';
 import { MovieView } from '../movie-view/movie-view';
 
 import { DirectorView } from '../director-view/director-view';
@@ -88,7 +88,7 @@ export class MainView extends React.Component {
 
     return (
       <Router>
-        <Navbar user={user} /> 
+        <Menubar user={user} /> 
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
               if (!user) return <Col>
