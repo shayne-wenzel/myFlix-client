@@ -6,7 +6,7 @@ a client-side built with React and Redux for an app called MoviMe based on its e
 
 ## Installation
 
-Install dependencies for bolly-flix-client with npm
+Install dependencies for myFlix-client with npm
 
 ```bash
   git clone https://github.com/shayne-wenzel/myFlix-client
